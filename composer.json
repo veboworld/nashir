@@ -1,19 +1,30 @@
 {
     "name": "vebo/shasha",
     "description": "API wWrapper for populer TV/Movies/Animes services",
-    "type": "library",
-    "require": {
-        "symfony/http-client": "^5.0"
-    },
-    "require-dev": {
-        "phpunit/phpunit": "^8.5"
-    },
-    "license": "MIT",
     "authors": [
         {
             "name": "Mondher Vallejo",
             "email": "developers@vebo.tn"
         }
     ],
-    "minimum-stability": "stable"
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "symfony/http-client": "^5.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Vebo\\Shasha\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Vebo\\Shasha\\Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }
