@@ -1,14 +1,20 @@
 {
     "name": "vebo/shasha",
-    "description": "API wWrapper for populer TV/Movies/Animes services",
+    "description": "API Wrapper for populer TV/Movies/Animes services",
+    "homepage": "https://devdocs.vebo.tn",
     "authors": [
         {
             "name": "Mondher Vallejo",
             "email": "developers@vebo.tn"
         }
     ],
+    "support": {
+        "issues": "https://github.com/vebotv/shasha/issues",
+        "source": "https://github.com/vebotv/shasha"
+    },
     "type": "library",
     "license": "MIT",
+    "keywords": ["TV", "Movies", "Animes"],
     "require": {
         "symfony/http-client": "^5.0"
     },
