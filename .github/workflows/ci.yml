@@ -21,6 +21,8 @@ jobs:
       with:
         php-version: ${{ matrix.php-versions }}
         extensions: mbstring
+        coverage: xdebug
+        tools: php-cs-fixer
 
     - name: Validate composer.json and composer.lock
       run: composer validate
@@ -28,5 +30,7 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
 
-    - name: Execute tests (Unit and Feature tests) via PHPUnit
-      run: vendor/bin/phpunit
+    - name: Execute tests via PHPUnit
+      run: vendor/bin/phpunit --coverage-text
+      env:
+        TMDB_KEY: ${{ secrets.TMDB_KEY }}

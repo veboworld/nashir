@@ -2,13 +2,13 @@
 
 return [
 
-    'default' => 'tmdb',
+    'default' => $_ENV['SHASHA_PROVIDER'] ?? 'tmdb',
 
     'cache' => false,
 
     'providers' => [
         'tmdb' => [
-            'apikey' => 'hhhhh',
+            'apikey' => $_ENV['TMDB_KEY'] ?? null,
         ],
     ],
 ];
