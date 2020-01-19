@@ -1,9 +1,9 @@
-name: "Tests"
+name: "Test"
 
 on: [push, pull_request]
 
 jobs:
-  test:
+  run:
     runs-on: ${{ matrix.operating-system }}
     strategy:
       max-parallel: 3
