@@ -3,8 +3,8 @@
 namespace Vebo\Shasha;
 
 use Closure;
-use InvalidArgumentException;
 use Illuminate\Support\Str;
+use InvalidArgumentException;
 
 class Shasha
 {
@@ -45,7 +45,8 @@ class Shasha
      *
      * @return string
      */
-    public function getDefaultService() {
+    public function getDefaultService()
+    {
         return $this->config->get('default');
     }
 
