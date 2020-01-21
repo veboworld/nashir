@@ -1,4 +1,5 @@
 <?php
+
 namespace Vebo\Shasha\Tests\Unit;
 
 use Vebo\Shasha\Tests\TestCase;
