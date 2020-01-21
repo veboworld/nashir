@@ -6,7 +6,7 @@ return [
 
     'cache' => false,
 
-    'providers' => [
+    'services' => [
         'tmdb' => [
             'apikey' => $_ENV['TMDB_KEY'] ?? null,
         ],

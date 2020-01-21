@@ -2,32 +2,157 @@
 
 namespace Vebo\Shasha;
 
+use Closure;
+use InvalidArgumentException;
+use Illuminate\Support\Str;
+
 class Shasha
 {
-    protected $config = [];
+    /**
+     * The configuration repository instance.
+     *
+     * @var \Illuminate\Contracts\Config\Repository
+     */
+    protected $config;
 
-    public function __construct(array $config)
+    /**
+     * The registered custom service creators.
+     *
+     * @var array
+     */
+    protected $customCreators = [];
+
+    /**
+     * The array of created "services".
+     *
+     * @var array
+     */
+    protected $services = [];
+
+    /**
+     * Create a new manager instance.
+     *
+     * @param  \Illuminate\Contracts\Container\Container  $container
+     * @return void
+     */
+    public function __construct($config)
     {
-        if ($config) {
-            $this->setConfig($config);
+        $this->config = new Configration($config);
+    }
+
+    /**
+     * Get the default service name.
+     *
+     * @return string
+     */
+    public function getDefaultService() {
+        return $this->config->get('default');
+    }
+
+    /**
+     * Get a service instance.
+     *
+     * @param  string  $service
+     * @return mixed
+     *
+     * @throws \InvalidArgumentException
+     */
+    public function service($service = null)
+    {
+        $service = $service ?: $this->getDefaultService();
+
+        if (is_null($service)) {
+            throw new InvalidArgumentException(sprintf(
+                'Unable to resolve NULL service for [%s].', static::class
+            ));
         }
+
+        // If the given service has not been created before, we will create the instances
+        // here and cache it so we can return it next time very quickly. If there is
+        // already a service created by this name, we'll just return that instance.
+        if (! isset($this->services[$service])) {
+            $this->services[$service] = $this->createService($service);
+        }
+
+        return $this->services[$service];
     }
 
-    public function getConfig()
+    /**
+     * Create a new service instance.
+     *
+     * @param  string  $service
+     * @return mixed
+     *
+     * @throws \InvalidArgumentException
+     */
+    protected function createService($name)
     {
-        return $this->config;
+        $config = $this->config->get('services.'.$name);
+
+        // First, we will determine if a custom service creator exists for the given service and
+        // if it does not we will check for a creator method for the service. Custom creator
+        // callbacks allow developers to build their own "services" easily using Closures.
+        if (isset($this->customCreators[$name])) {
+            return $this->callCustomCreator($name);
+        } else {
+            $method = 'create'.Str::studly($name).'Service';
+
+            if (method_exists($this, $method)) {
+                return $this->$method($name, $config);
+            }
+        }
+        throw new InvalidArgumentException("Service [$name] not supported.");
     }
 
-    public function setConfig($config)
+    /**
+     * Call a custom service creator.
+     *
+     * @param  string  $service
+     * @return mixed
+     */
+    protected function callCustomCreator($service)
     {
-        $this->config = new Configration(
-$config);
+        return $this->customCreators[$service]($this->config);
+    }
+
+    /**
+     * Register a custom service creator Closure.
+     *
+     * @param  string  $service
+     * @param  \Closure  $callback
+     * @return $this
+     */
+    public function extend($service, Closure $callback)
+    {
+        $this->customCreators[$service] = $callback;
 
         return $this;
     }
 
-    public function tmdb()
+    /**
+     * Get all of the created "services".
+     *
+     * @return array
+     */
+    public function getServices()
     {
-        //return new
+        return $this->services;
+    }
+
+    public function createTmdbService($name, $config)
+    {
+        return new Configration($config);
+    }
+
+    /**
+     * Dynamically call the default service instance.
+     *
+     * @param  string  $method
+     * @param  array  $parameters
+     * @return mixed
+     */
+    public function __call($method, $parameters)
+    {
+        return $this->service()->$method(...$parameters);
     }
 }
