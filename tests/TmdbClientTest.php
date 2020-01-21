@@ -1,4 +1,5 @@
 <?php
+
 namespace Vebo\Shasha\Tests;
 
 class TmdbClientTest extends TestCase

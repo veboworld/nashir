@@ -1,14 +1,14 @@
 <?php
+
 namespace Vebo\Shasha;
 
 class Shasha
 {
-
     protected $config = [];
 
     public function __construct(array $config)
     {
-        if($config) {
+        if ($config) {
             $this->setConfig($config);
         }
     }
@@ -20,7 +20,7 @@ class Shasha
 
     public function setConfig($config)
     {
-        $this->config = new Configration( 
+        $this->config = new Configration(
 $config);
 
         return $this;
@@ -28,6 +28,6 @@ $config);
 
     public function tmdb()
     {
-        //return new 
+        //return new
     }
 }
