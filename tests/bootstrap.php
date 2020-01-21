@@ -19,12 +19,12 @@ error_reporting(-1);
  */
 date_default_timezone_set('UTC');
 
-$autoloader = __DIR__ . '/../vendor/autoload.php';
+$autoloader = __DIR__.'/../vendor/autoload.php';
 
 /*
  * Check that composer installation was done.
  */
-if (!file_exists($autoloader)) {
+if (! file_exists($autoloader)) {
     throw new Exception(
         'Please run "composer install" in root directory to setup unit test dependencies before running the tests'
     );

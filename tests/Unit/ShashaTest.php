@@ -1,11 +1,11 @@
 <?php
+
 namespace Vebo\Shasha\Tests\Unit;
 
 use Vebo\Shasha\Shasha;
 
 class ShashaTest extends TestCase
 {
-
     protected $shasha;
 
     public function setUp(): void

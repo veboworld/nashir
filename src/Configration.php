@@ -1,4 +1,5 @@
 <?php
+
 namespace Vebo\Shasha;
 
 use ArrayAccess;
@@ -6,7 +7,6 @@ use Illuminate\Support\Arr;
 
 class Configration implements ArrayAccess
 {
-
     protected $items = [];
 
     public function __construct(array $config)
@@ -14,7 +14,8 @@ class Configration implements ArrayAccess
         $this->items = $config;
     }
 
-    public function has($key) {
+    public function has($key)
+    {
         return Arr::has($this->items, $key);
     }
 
@@ -52,7 +53,8 @@ class Configration implements ArrayAccess
         $this->set($key, $value);
     }
 
-    public function offsetUnset($key) {
+    public function offsetUnset($key)
+    {
         $this->set($key, null);
     }
 }

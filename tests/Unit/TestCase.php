@@ -1,4 +1,5 @@
 <?php
+
 namespace Vebo\Shasha\Tests\Unit;
 
 use Vebo\Shasha\Tests\TestCase as BaseUnitTestCase;
@@ -20,5 +21,4 @@ class TestCase extends BaseUnitTestCase
             ],
         ];
     }
-
 }
