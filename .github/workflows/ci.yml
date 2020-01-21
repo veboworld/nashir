@@ -16,11 +16,6 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: PHP CodeSniffer Check
-      uses: chekalsky/phpcs-action@v1.0.0
-      with:
-        enable_warnings: true
-
     - name: Install PHP
       uses: shivammathur/setup-php@master
       with:
