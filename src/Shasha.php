@@ -5,6 +5,7 @@ namespace Vebo\Shasha;
 use Closure;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
+use Vebo\Shasha\Services\TmdbService;
 
 class Shasha
 {
@@ -142,7 +143,10 @@ class Shasha
 
     public function createTmdbService($name, $config)
     {
-        return new Configration($config);
+        return new TmdbService(
+            $name,
+            $config
+        );
     }
 
     /**
