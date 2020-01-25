@@ -1,4 +1,5 @@
-[![Actions Status](https://github.com/fwdmo/vebo-shasha/workflows/Test/badge.svg)](https://github.com/fwdmo/vebo-shasha/actions) 
+<p style="text:center;">[![Actions Status](https://github.com/fwdmo/vebo-shasha/workflows/Test/badge.svg)](https://github.com/fwdmo/vebo-shasha/actions)
+[![Build Status](https://travis-ci.com/fwdmo/vebo-shasha.svg?token=JZk2BNvm4pLszvyxpzk2&branch=master)](https://travis-ci.com/fwdmo/vebo-shasha)</p>
 
 ## About Shasha 👋
 
