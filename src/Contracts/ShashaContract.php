@@ -2,6 +2,6 @@
 
 namespace Vebo\Shasha\Contracts;
 
-interface ShashaInterface
+interface ShashaContract
 {
 }

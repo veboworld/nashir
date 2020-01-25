@@ -6,8 +6,9 @@ use Closure;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
 use Vebo\Shasha\Services\TmdbService;
+use Vebo\Shasha\Contracts\ShashaContract;
 
-class Shasha
+class Shasha implements ShashaContract
 {
     /**
      * The configuration repository instance.

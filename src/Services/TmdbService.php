@@ -2,6 +2,6 @@
 
 namespace Vebo\Shasha\Services;
 
-class TmdbService
+class TmdbService extends AbstractService
 {
 }
