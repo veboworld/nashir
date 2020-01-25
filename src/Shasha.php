@@ -5,8 +5,8 @@ namespace Vebo\Shasha;
 use Closure;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use Vebo\Shasha\Services\TmdbService;
 use Vebo\Shasha\Contracts\ShashaContract;
+use Vebo\Shasha\Services\TmdbService;
 
 class Shasha implements ShashaContract
 {
@@ -56,9 +56,9 @@ class Shasha implements ShashaContract
      * Get a service instance.
      *
      * @param  string  $service
+     * @throws \InvalidArgumentException
      * @return mixed
      *
-     * @throws \InvalidArgumentException
      */
     public function service($service = null)
     {
@@ -66,7 +66,8 @@ class Shasha implements ShashaContract
 
         if (is_null($service)) {
             throw new InvalidArgumentException(sprintf(
-                'Unable to resolve NULL service for [%s].', static::class
+                'Unable to resolve NULL service for [%s].',
+                static::class
             ));
         }
 
@@ -84,9 +85,9 @@ class Shasha implements ShashaContract
      * Create a new service instance.
      *
      * @param  string  $service
+     * @throws \InvalidArgumentException
      * @return mixed
      *
-     * @throws \InvalidArgumentException
      */
     protected function createService($name)
     {
@@ -97,13 +98,13 @@ class Shasha implements ShashaContract
         // callbacks allow developers to build their own "services" easily using Closures.
         if (isset($this->customCreators[$name])) {
             return $this->callCustomCreator($name);
-        } else {
-            $method = 'create'.Str::studly($name).'Service';
-
-            if (method_exists($this, $method)) {
-                return $this->$method($name, $config);
-            }
         }
+        $method = 'create'.Str::studly($name).'Service';
+
+        if (method_exists($this, $method)) {
+            return $this->$method($name, $config);
+        }
+        
         throw new InvalidArgumentException("Service [$name] not supported.");
     }
 

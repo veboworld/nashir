@@ -9,5 +9,4 @@ interface ServiceContract
     public function movie();
 
     public function get();
-
 }
