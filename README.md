@@ -1,6 +1,7 @@
 <p align="center">
 <a href="https://github.com/fwdmo/vebo-shasha/actions"><img src="https://github.com/fwdmo/vebo-shasha/workflows/Test/badge.svg" alt="Actions Status"></a>
 <a href="https://travis-ci.com/fwdmo/vebo-shasha"><img src="https://travis-ci.com/fwdmo/vebo-shasha.svg?token=JZk2BNvm4pLszvyxpzk2&branch=master" alt="Build Status"></a>
+<a href="https://github.com/fwdmo/vebo-shasha/issues"><img src="https://img.shields.io/github/issues/fwdmo/vebo-shasha" alt="GitHub issues"></a>
 <a href="https://github.com/fwdmo/vebo-shasha/blob/master/LICENSE.md"><img src="https://img.shields.io/github/license/fwdmo/vebo-shasha" alt="GitHub license"></a>
 </p>
 
