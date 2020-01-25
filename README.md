@@ -14,7 +14,7 @@
 This package requires PHP 7.2
 
 ~~~
-composer require vebo/shasha
+composer require fwdmo/vebo-shasha
 ~~~
 
 ## 📄 Documentation
@@ -39,7 +39,7 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## 🔐 Security
 
-If you discover a security vulnerability within Vebo TV, please send an e-mail to [security@vebo.tn](mailto:security@vebo.tn). All security vulnerabilities will be promptly addressed.
+Please review [our security policy](https://github.com/fwdmo/vebo-shasha/security/policy) on how to report security vulnerabilities.
 
 ## 📍 Roadmap
 
@@ -48,6 +48,6 @@ You can also see all roadmap related issues by filtering [those labeled with "Ro
 
 ## ⚖️ License
 
-Shasha is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+Shasha is open-source software licensed under the [MIT license](LICENSE.md).
 
 _This project is maintained by [Vebo TV](https://vebo.tn/)_
