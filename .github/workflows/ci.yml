@@ -6,10 +6,11 @@ jobs:
   run:
     runs-on: ${{ matrix.operating-system }}
     strategy:
-      max-parallel: 3
+      max-parallel: 30
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macOS-latest]
-        php-versions: ['7.2', '7.3', '7.4'] 
+        php-versions: ['7.2', '7.3', '7.4']
+        composer-flags: ['', '--prefer-lowest']
 
     name: PHP ${{ matrix.php-versions }} Test on ${{ matrix.operating-system }}
     steps:
@@ -28,7 +29,7 @@ jobs:
       run: composer validate
 
     - name: Install dependencies
-      run: composer install --prefer-dist --no-progress --no-suggest
+      run: composer install ${{ matrix.composer-flags }} --prefer-dist --no-progress --no-suggest
 
     - name: Execute tests via PHPUnit
       run: vendor/bin/phpunit --coverage-text
