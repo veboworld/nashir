@@ -8,7 +8,7 @@ jobs:
     strategy:
       max-parallel: 30
       matrix:
-        operating-system: ubuntu-latest
+        operating-system: [ubuntu-latest]
         php-versions: ['7.2', '7.3', '7.4']
         composer-flags: ['', '--prefer-lowest']
 
