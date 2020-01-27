@@ -11,8 +11,8 @@ abstract class AbstractService implements ServiceContract
 
     protected $url;
 
-    public function __construct($name, array $config) {
-
+    public function __construct($name, array $config)
+    {
         $this->config = new Configration($config);
     }
 
