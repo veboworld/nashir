@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/livewire/livewire/master/github_banner.svg">
+<img src="https://raw.githubusercontent.com/fwdmo/vebo-shasha/master/docs/img/logo.svg">
 </p>
 <p align="center">
 <a href="https://github.com/fwdmo/vebo-shasha/actions"><img src="https://github.com/fwdmo/vebo-shasha/workflows/Test/badge.svg" alt="Actions Status"></a>
