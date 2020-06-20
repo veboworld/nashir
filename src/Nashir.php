@@ -1,14 +1,14 @@
 <?php
 
-namespace Vebo\Shasha;
+namespace Playgon\Nashir;
 
 use Closure;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use Vebo\Shasha\Contracts\ShashaContract;
-use Vebo\Shasha\Services\TmdbService;
+use Playgon\Nashir\Contracts\NashirContract;
+use Playgon\Nashir\Services\TmdbService;
 
-class Shasha implements ShashaContract
+class Nashir implements NashirContract
 {
     /**
      * The configuration repository instance.

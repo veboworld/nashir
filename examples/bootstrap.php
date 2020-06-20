@@ -4,9 +4,9 @@ require __DIR__.'/../vendor/autoload.php';
 
 $configs = require __DIR__.'/config.php';
 
-use Vebo\Shasha\Configration as Config;
-use Vebo\Shasha\Shasha;
+use Playgon\Nashir\Configration as Config;
+use Playgon\Nashir\Nashir;
 
-$shasha = new Shasha($configs);
+$nashir = new Nashir($configs);
 
 $config = new Config($configs);

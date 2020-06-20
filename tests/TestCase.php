@@ -1,6 +1,6 @@
 <?php
 
-namespace Vebo\Shasha\Tests;
+namespace Playgon\Nashir\Tests;
 
 use PHPUnit\Framework\TestCase as BaseUnitTestCase;
 

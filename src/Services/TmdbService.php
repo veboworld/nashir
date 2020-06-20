@@ -1,6 +1,6 @@
 <?php
 
-namespace Vebo\Shasha\Services;
+namespace Playgon\Nashir\Services;
 
 class TmdbService extends AbstractService
 {

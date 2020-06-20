@@ -1,6 +1,6 @@
 <?php
 
-namespace Vebo\Shasha;
+namespace Playgon\Nashir;
 
 use ArrayAccess;
 use Illuminate\Support\Arr;

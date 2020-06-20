@@ -1,16 +1,16 @@
 {
-    "name": "vebo/shasha",
+    "name": "playgontv/nashir",
     "description": "API Wrapper for populer TV/Movies/Animes services",
-    "homepage": "https://devdocs.vebo.tn/code/shasha/",
+    "homepage": "https://devdocs.playgon.tv/code/nashir/",
     "authors": [
         {
             "name": "Mondher Vallejo",
-            "email": "developers@vebo.tn"
+            "email": "mv.developers@playgon.tv"
         }
     ],
     "support": {
-        "issues": "https://github.com/vebotv/shasha/issues",
-        "source": "https://github.com/vebotv/shasha"
+        "issues": "https://github.com/playgontv/nashir/issues",
+        "source": "https://github.com/playgontv/nashir"
     },
     "type": "library",
     "license": "MIT",
@@ -26,12 +26,12 @@
     },
     "autoload": {
         "psr-4": {
-            "Vebo\\Shasha\\": "src/"
+            "Playgon\\Nashir\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Vebo\\Shasha\\Tests\\": "tests/"
+            "Playgon\\Nashir\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "stable",

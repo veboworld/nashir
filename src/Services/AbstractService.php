@@ -1,9 +1,9 @@
 <?php
 
-namespace Vebo\Shasha\Services;
+namespace Playgon\Nashir\Services;
 
-use Vebo\Shasha\Configration;
-use Vebo\Shasha\Contracts\ServiceContract;
+use Playgon\Nashir\Configration;
+use Playgon\Nashir\Contracts\ServiceContract;
 
 abstract class AbstractService implements ServiceContract
 {

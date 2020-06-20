@@ -1,6 +1,6 @@
 <?php
 
-namespace Vebo\Shasha\Contracts;
+namespace Playgon\Nashir\Contracts;
 
 interface ServiceContract
 {

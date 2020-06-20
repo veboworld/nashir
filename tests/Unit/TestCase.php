@@ -1,8 +1,8 @@
 <?php
 
-namespace Vebo\Shasha\Tests\Unit;
+namespace Playgon\Nashir\Tests\Unit;
 
-use Vebo\Shasha\Tests\TestCase as BaseUnitTestCase;
+use Playgon\Nashir\Tests\TestCase as BaseUnitTestCase;
 
 class TestCase extends BaseUnitTestCase
 {
